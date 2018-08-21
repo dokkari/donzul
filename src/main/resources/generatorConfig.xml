@@ -4,10 +4,10 @@
   <classPathEntry location="C:\Users\kjuhe\git\donzul\postgresql-42.2.4.jar"/>
   <context id="donzul" >
     <jdbcConnection driverClass="org.postgresql.Driver" connectionURL="jdbc:postgresql://localhost:5432/donzul" userId="postgres" password="maro" />
-    <javaModelGenerator targetPackage="dok.donzul.entity" targetProject="..\..\..\src" />
-    <sqlMapGenerator targetPackage="dok.donzul.mapper" targetProject="..\resource" />
-    <javaClientGenerator targetPackage="dok.donzul.mapper" targetProject="..\..\..\src" type="XMLMAPPER" />
-    <table schema="donzul" tableName="tb_mst_user" >
-    </table>
+    <javaModelGenerator targetPackage="dok.donzul.entity" targetProject="donzul\src\main\java" />
+    <sqlMapGenerator targetPackage="dok.donzul.mapper" targetProject="donzul\src\main\resources" />
+    <javaClientGenerator targetPackage="dok.donzul.mapper" targetProject="donzul\src\main\java" type="XMLMAPPER" />
+    <table schema="donzul" tableName="tb_mst_user" />
+    <table schema="donzul" tableName="tb_mst_user_authority" />
   </context>
 </generatorConfiguration>
