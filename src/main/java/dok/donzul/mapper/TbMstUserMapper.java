@@ -3,6 +3,8 @@ package dok.donzul.mapper;
 import dok.donzul.entity.TbMstUser;
 import dok.donzul.entity.TbMstUserExample;
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 public interface TbMstUserMapper {

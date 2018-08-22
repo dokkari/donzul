@@ -1,11 +1,12 @@
 package dok.donzul.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import dok.donzul.entity.TbMstUser;
-import dok.donzul.mapper.TbMstUserMapper;
 
 @Controller
 public class DefaultController {
@@ -13,7 +14,9 @@ public class DefaultController {
 //	private TbMstUserMapper userMapper;
 	
 	@RequestMapping("/")
-	public String index() {
+	public String index(Model model) {
+		UserDetails user = (TbMstUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		model.addAttribute("user", user);
 		return "index";
 	}
 }

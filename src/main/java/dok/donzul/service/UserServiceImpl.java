@@ -22,9 +22,9 @@ import dok.donzul.mapper.TbMstUserMapper;
 public class UserServiceImpl implements UserService {
 
 	@Autowired
-	TbMstUserMapper userMapper;
+	private TbMstUserMapper userMapper;
 	@Autowired
-	TbMstUserAuthorityMapper userAuthMapper;
+	private TbMstUserAuthorityMapper userAuthMapper;
 	
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -40,6 +40,7 @@ public class UserServiceImpl implements UserService {
 			user.setAuthorities(getAuthorities(username));
 			
 		}
+		
 		return user;
 	}
 
